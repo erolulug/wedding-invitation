@@ -1,0 +1,33 @@
+:root {
+  --color-canvas: #f7f0df;
+  --color-canvas-deep: #eee2ca;
+  --color-paper: #fbf7ed;
+  --color-paper-highlight: #fffdf8;
+  --color-paper-shadow: #d8cbb6;
+  --color-ink: #443a31;
+  --color-ink-muted: #87786a;
+  --color-line: #d7c9b4;
+  --color-wine: #71121d;
+  --color-wine-deep: #41070e;
+  --color-wine-highlight: #a83a45;
+  --color-gold: #d7b66e;
+  --color-sage: #7d8973;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Pinyon Script", "Brush Script MT", cursive;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --radius-sm: .25rem;
+  --radius-md: .5rem;
+  --radius-round: 999px;
+  --shadow-paper: 0 1.5rem 3.5rem rgb(68 48 31 / 18%);
+  --shadow-seal: 0 .55rem 1rem rgb(50 3 9 / 38%), inset 0 .12rem .18rem rgb(255 255 255 / 22%);
+  --duration-fast: 180ms;
+  --duration-page: 850ms;
+}

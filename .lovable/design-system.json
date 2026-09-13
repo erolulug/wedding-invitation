@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "name": "Gentle Library",
+    "package": "@ws-fcd2c4ace465d2199110/aaaca736-8e62-4c8b-88cd-045178321fe7",
+    "version": "1.1.0",
+    "framework": "react",
+    "css_framework": "plain-css",
+    "starter_template": "custom_design_system",
+    "theme_files": [
+      "src/design-system/styles/theme.css"
+    ],
+    "source_type": "local",
+    "source_manifest": {
+      "#enrichment": "65e8becd80cd5676a6e2e1fdf81ccf8ae79174d2cf87afb4e225e2c07fb63694",
+      ".gitignore": "6059213806e442947666752f3db6bfdc",
+      ".lovable/meta.yaml": "b77097485054b58e13a25521910f1e6a",
+      ".lovable/plan/refine-the-wedding-invitation-envelope-2026-09-13.md": "7825ac300077c7190aca78ac268e58db",
+      ".lovable/sources.yaml": "1b62005cb01c2413aacc02b0f9500c65",
+      ".lovable/system.md": "242d1764b44826203661586bccbc533f",
+      "README.md": "d19675c449605f23c7cfa133c69b398b",
+      "bunfig.toml": "25f4c8696b22b0943db7191e0cdf7942",
+      "eslint.config.js": "07a67437fb1a45ab36d6de0145ff09de",
+      "lovable.toml": "9636c1bf32f9901bfba4eabb92981217",
+      "mockupPreviewPlugin.ts": "8024d439734f27417621536969f64db1",
+      "package.json": "707caee8cbea8d6122afb0af9e20c7e6",
+      "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
+      "src/design-system/components/Button.tsx": "007aceedb27999f86b71b8f5646eee3e",
+      "src/design-system/components/EnvelopeIntro.tsx": "1d4ec86723a2fdcf294616aa3ddfa616",
+      "src/design-system/lib/utils.ts": "27c6e674c89b0897476b08d76a1c25cc",
+      "src/design-system/styles/theme.css": "54b547b9a2cac1316a0f42720ed78779",
+      "src/index.ts": "04bba83bbe3a261c88218454e3b94c48",
+      "src/mockup-preview.d.ts": "38969839f35ce2966e32a9f01a5c09ea",
+      "src/routeTree.gen.ts": "4fd75eb72aeb2d60f12add8cac402a7e",
+      "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
+      "src/routes/[__component].preview.$.tsx": "3a40af1fe37daff2e891175a6e6d4f99",
+      "src/routes/[__mockup].preview.$.tsx": "5d9f42470848aa60148f20f9580e240e",
+      "src/routes/__root.tsx": "ab216f2d27ff4b9abf67d2c36435869f",
+      "src/routes/index.tsx": "8f8bdbe3c175b25c362f0fdd0ed040ba",
+      "src/styles.css": "1f8a73c1d370e2bae9aef4364f57e691",
+      "tsconfig.json": "994abf64c2b9f78b568879f80ed0170e",
+      "vite.config.ts": "9f787596cc6f9a2aa3de5a021aed28f3",
+      "wrangler.jsonc": "680b897d48e44bcc65fe437c29b38f3b"
+    },
+    "pipeline_version": 8
+  },
+  "tokens": {
+    "color": [
+      {
+        "name": "--color-canvas",
+        "raw": "#f7f0df",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-canvas-deep",
+        "raw": "#eee2ca",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-paper",
+        "raw": "#fbf7ed",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-paper-highlight",
+        "raw": "#fffdf8",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-ink",
+        "raw": "#443a31",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-ink-muted",
+        "raw": "#87786a",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-wine",
+        "raw": "#71121d",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-wine-deep",
+        "raw": "#41070e",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-wine-highlight",
+        "raw": "#a83a45",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-gold",
+        "raw": "#d7b66e",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--color-sage",
+        "raw": "#7d8973",
+        "source": "src/design-system/styles/theme.css"
+      }
+    ],
+    "spacing": [
+      {
+        "name": "--space-1",
+        "raw": ".25rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-2",
+        "raw": ".5rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-3",
+        "raw": ".75rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-4",
+        "raw": "1rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-6",
+        "raw": "1.5rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-8",
+        "raw": "2rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-12",
+        "raw": "3rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--space-16",
+        "raw": "4rem",
+        "source": "src/design-system/styles/theme.css"
+      }
+    ],
+    "typography": [
+      {
+        "name": "--color-line",
+        "raw": "#d7c9b4",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--font-display",
+        "raw": "\"Cormorant Garamond\", Georgia, serif",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--font-script",
+        "raw": "\"Pinyon Script\", \"Brush Script MT\", cursive",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--font-body",
+        "raw": "\"Cormorant Garamond\", Georgia, serif",
+        "source": "src/design-system/styles/theme.css"
+      }
+    ],
+    "radius": [
+      {
+        "name": "--radius-sm",
+        "raw": ".25rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--radius-md",
+        "raw": ".5rem",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--radius-round",
+        "raw": "999px",
+        "source": "src/design-system/styles/theme.css"
+      }
+    ],
+    "shadow": [
+      {
+        "name": "--color-paper-shadow",
+        "raw": "#d8cbb6",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--shadow-paper",
+        "raw": "0 1.5rem 3.5rem rgb(68 48 31 / 18%)",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--shadow-seal",
+        "raw": "0 .55rem 1rem rgb(50 3 9 / 38%), inset 0 .12rem .18rem rgb(255 255 255 / 22%)",
+        "source": "src/design-system/styles/theme.css"
+      }
+    ],
+    "other": [
+      {
+        "name": "--duration-fast",
+        "raw": "180ms",
+        "source": "src/design-system/styles/theme.css"
+      },
+      {
+        "name": "--duration-page",
+        "raw": "850ms",
+        "source": "src/design-system/styles/theme.css"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button",
+      "file": "src/design-system/components/Button",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "primary",
+            "quiet",
+            "seal"
+          ],
+          "default": "primary"
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "sm",
+            "md",
+            "icon"
+          ],
+          "default": "md"
+        }
+      ],
+      "usage": "Use for clear invitation actions and compact controls.",
+      "examples": [
+        {
+          "label": "RSVP action",
+          "code": "\u003cButton variant=\"primary\"\u003eRSVP\u003c/Button\u003e"
+        }
+      ],
+      "antipatterns": [
+        "Do not use a raw button when a Button variant fits."
+      ]
+    },
+    {
+      "name": "EnvelopeIntro",
+      "file": "src/design-system/components/EnvelopeIntro",
+      "import_path": "",
+      "props": [
+        {
+          "name": "monogram",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "onOpened",
+          "type": "function"
+        }
+      ],
+      "usage": "Use as the ceremonial opening screen for a digital invitation.",
+      "examples": [
+        {
+          "label": "Invitation opening",
+          "code": "\u003cEnvelopeIntro monogram=\"J \u0026 A\" date=\"20 June 2027\" prompt=\"Tap the seal to open\" /\u003e"
+        }
+      ],
+      "antipatterns": [
+        "Do not place the envelope inside another card or trigger it automatically."
+      ]
+    }
+  ]
+}
