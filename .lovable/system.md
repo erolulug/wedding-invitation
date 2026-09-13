@@ -2,6 +2,16 @@
 
 Ivory Atelier is a tactile, editorial system for formal wedding invitations. It should feel like fine stationery photographed in soft daylight: warm, restrained, personal, and materially believable.
 
+## Setup
+
+Importing the library entry point brings in `components.css`, which includes the token definitions from `theme.css` and all component styles. The display and script fonts are loaded from Google Fonts — consumers must add these tags to their document `<head>`:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap">
+```
+
 ## Core rules
 
 - Use semantic tokens from `theme.css` for every color, spacing, radius, shadow, and transition. Never introduce raw visual values in feature components.

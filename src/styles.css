@@ -1,54 +1,10 @@
-@import "./design-system/styles/theme.css";
+@import "./design-system/styles/components.css";
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-body); }
 button, input, select, textarea { font: inherit; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
-
-.ds-button { border: 0; cursor: pointer; letter-spacing: 0; transition: transform var(--duration-fast) ease, background var(--duration-fast) ease; }
-.ds-button:disabled { cursor: default; }
-.ds-button--primary { padding: var(--space-3) var(--space-8); color: var(--color-paper-highlight); background: var(--color-wine); border: 1px solid var(--color-wine); text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }
-.ds-button--primary:hover { background: var(--color-wine-deep); transform: translateY(-1px); }
-.ds-button--quiet { padding: var(--space-2) var(--space-3); color: var(--color-ink-muted); background: transparent; font-size: .72rem; letter-spacing: .1em; }
-.ds-button--quiet[aria-pressed="true"] { color: var(--color-wine); border-bottom: 1px solid var(--color-wine); }
-.ds-button--icon { display: grid; place-items: center; }
-
-.envelope-stage { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; align-content: center; gap: var(--space-6); overflow: hidden; background: radial-gradient(circle at 50% 44%, var(--color-paper-highlight), var(--color-canvas) 62%, var(--color-canvas-deep)); transition: opacity var(--duration-page) ease; }
-.envelope-stage--revealed { opacity: 0; pointer-events: none; transition-delay: 800ms; }
-.envelope-scene { position: relative; width: min(318px, 72vw); aspect-ratio: 9 / 16; perspective: 1500px; }
-.envelope-object { position: absolute; z-index: 3; inset: 0; transform-style: preserve-3d; filter: drop-shadow(0 22px 24px rgb(70 48 24 / 16%)); transition: transform 950ms cubic-bezier(.2,.72,.2,1), opacity 700ms ease; }
-.envelope-back, .envelope-front, .envelope-flap { position: absolute; inset: 0; border: 1px solid color-mix(in srgb, var(--color-line), transparent 30%); border-radius: var(--radius-sm); }
-.envelope-back { background: linear-gradient(105deg, var(--color-paper), var(--color-paper-highlight) 44%, var(--color-paper)); }
-.envelope-front { z-index: 3; overflow: hidden; background: linear-gradient(115deg, color-mix(in srgb, var(--color-paper), var(--color-paper-shadow) 5%), var(--color-paper-highlight) 48%, var(--color-paper) 85%); clip-path: polygon(0 0, 50% 49%, 100% 0, 100% 100%, 0 100%); }
-.envelope-front::after, .envelope-flap::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .22; background-image: repeating-radial-gradient(circle at 30% 40%, rgb(115 91 57 / 15%) 0 .4px, transparent .5px 3px); mix-blend-mode: multiply; }
-.fold { position: absolute; inset: 0; }
-.fold--left { clip-path: polygon(0 0, 50% 50%, 0 100%); background: linear-gradient(75deg, var(--color-paper) 15%, color-mix(in srgb, var(--color-paper), var(--color-paper-shadow) 10%)); border-right: 1px solid color-mix(in srgb, var(--color-line), transparent 34%); }
-.fold--right { clip-path: polygon(100% 0, 50% 50%, 100% 100%); background: linear-gradient(285deg, var(--color-paper) 15%, color-mix(in srgb, var(--color-paper), var(--color-paper-shadow) 8%)); }
-.fold--bottom { clip-path: polygon(0 100%, 50% 50%, 100% 100%); background: linear-gradient(0deg, color-mix(in srgb, var(--color-paper), var(--color-paper-shadow) 7%), var(--color-paper-highlight)); filter: drop-shadow(0 -1px 1px rgb(76 58 38 / 8%)); }
-.envelope-flap { z-index: 4; transform-origin: top center; transform: rotateX(0deg); backface-visibility: hidden; clip-path: polygon(0 0, 100% 0, 50% 50%); background: linear-gradient(165deg, var(--color-paper-highlight), var(--color-paper) 62%, color-mix(in srgb, var(--color-paper), var(--color-paper-shadow) 9%)); filter: drop-shadow(0 5px 5px rgb(68 48 31 / 12%)); transition: transform 1050ms cubic-bezier(.2,.7,.25,1), z-index 0ms linear 520ms; }
-.botanical { position: absolute; z-index: 6; width: 74px; height: 46%; color: color-mix(in srgb, var(--color-paper-shadow), var(--color-paper) 48%); filter: drop-shadow(-1px -1px 0 var(--color-paper-highlight)) drop-shadow(1px 1px 0 rgb(91 68 41 / 14%)); opacity: .78; }
-.sprig-shadow { stroke-width: 1.25; }
-.botanical--left-top { left: 5%; top: 6%; transform: rotate(-8deg); }
-.botanical--right-top { right: 5%; top: 6%; transform: scaleX(-1) rotate(-8deg); }
-.botanical--left-bottom { left: 5%; bottom: 2%; transform: scaleY(-1) rotate(-8deg); }
-.botanical--right-bottom { right: 5%; bottom: 2%; transform: scale(-1) rotate(-8deg); }
-.wax-seal { position: absolute; z-index: 8; left: 50%; top: 50%; width: 92px; aspect-ratio: 1; transform: translate(-50%, -50%) rotate(-4deg); color: var(--color-gold); background: radial-gradient(circle at 34% 27%, var(--color-wine-highlight), var(--color-wine) 46%, var(--color-wine-deep) 88%); border: 4px double color-mix(in srgb, var(--color-wine-highlight), var(--color-wine-deep)); border-radius: 44% 51% 47% 53% / 51% 44% 56% 47%; box-shadow: var(--shadow-seal); font-family: var(--font-script); font-size: 1.75rem; text-shadow: 0 1px 1px var(--color-wine-deep); transition: transform 280ms ease, opacity 360ms ease, filter 280ms ease; }
-.wax-seal::before { content: ""; position: absolute; inset: 7px; border: 1px solid color-mix(in srgb, var(--color-gold), transparent 38%); border-radius: inherit; }
-.wax-seal:hover { transform: translate(-50%, -50%) rotate(-2deg) scale(1.035); filter: brightness(1.06); }
-.envelope-instruction { display: grid; justify-items: center; gap: var(--space-1); color: var(--color-ink-muted); text-transform: uppercase; letter-spacing: .22em; font-size: .62rem; transition: opacity 240ms ease; }
-.envelope-instruction__chevron { font-size: 1rem; animation: cue 1.8s ease-in-out infinite; }
-.invitation-peek { position: absolute; z-index: 2; inset: 3% 5%; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 12%; color: var(--color-wine); background: var(--color-paper-highlight); border: 1px solid var(--color-line); box-shadow: var(--shadow-paper); transform: translateY(8%); transition: transform 1200ms cubic-bezier(.18,.72,.22,1); }
-.invitation-peek__mark { font-family: var(--font-script); font-size: 2.2rem; }
-.invitation-peek__rule { width: 42px; height: 1px; margin: var(--space-3); background: var(--color-gold); }
-.invitation-peek__date { color: var(--color-ink-muted); font-size: .7rem; letter-spacing: .16em; }
-.envelope-stage--opening .envelope-flap, .envelope-stage--revealed .envelope-flap { z-index: 1; transform: rotateX(178deg); }
-.envelope-stage--opening .envelope-object, .envelope-stage--revealed .envelope-object { z-index: 1; }
-.envelope-stage--opening .wax-seal, .envelope-stage--revealed .wax-seal { opacity: 0; transform: translate(-50%, -50%) rotate(12deg) scale(.72); }
-.envelope-stage--opening .invitation-peek, .envelope-stage--revealed .invitation-peek { transform: translateY(-25%); }
-.envelope-stage--opening .envelope-instruction, .envelope-stage--revealed .envelope-instruction { opacity: 0; }
-.envelope-stage--revealed .envelope-object { transform: translateY(10%) scale(.96); opacity: 0; }
-@keyframes cue { 0%,100% { transform: translateY(2px); opacity: .55; } 50% { transform: translateY(-3px); opacity: 1; } }
 
 .invitation { min-height: 100vh; opacity: .65; transition: opacity var(--duration-page) ease; }
 .invitation--opened { opacity: 1; }
@@ -116,8 +72,6 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--color-gold); ou
 .rsvp-thanks { padding: var(--space-10) 0; color: var(--color-wine); text-align: center; font-size: 1.3rem; }
 
 @media (max-width: 640px) {
-  .envelope-scene { width: min(286px, 76vw); }
-  .wax-seal { width: 80px; font-size: 1.5rem; }
   .countdown-grid { grid-template-columns: repeat(2, 1fr); }
   .countdown-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--color-line); }
   .countdown-item:nth-child(4) { border-top: 1px solid var(--color-line); }

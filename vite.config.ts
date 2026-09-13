@@ -9,8 +9,9 @@ import { mockupPreviewPlugin } from "./mockupPreviewPlugin";
 
 export default defineConfig(({ command, mode }) => {
   // Cloudflare Workers plugin only on build (produces the worker output);
-  // the workerd runtime isn't available for the dev server.
-  const useCloudflare = command === "build";
+  // the workerd runtime isn't available for the dev server. STATIC_BUILD=1
+  // produces a plain Node preview bundle used to snapshot static HTML.
+  const useCloudflare = command === "build" && !process.env.STATIC_BUILD;
 
   return {
     server: {
