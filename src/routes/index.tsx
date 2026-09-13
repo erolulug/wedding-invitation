@@ -44,7 +44,7 @@ const copy = {
 
 function InvitationPage() {
   const [opened, setOpened] = useState(false);
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState(0);
   const [language, setLanguage] = useState<keyof typeof copy>("cs");
   const [rsvpOpen, setRsvpOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -52,11 +52,12 @@ function InvitationPage() {
   const handleEnvelopeOpened = useCallback(() => setOpened(true), []);
 
   useEffect(() => {
+    setNow(Date.now());
     const timer = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(timer);
   }, []);
 
-  const remaining = Math.max(0, weddingTime - now);
+  const remaining = now === 0 ? 0 : Math.max(0, weddingTime - now);
   const countdown = [
     Math.floor(remaining / 86400000),
     Math.floor((remaining / 3600000) % 24),

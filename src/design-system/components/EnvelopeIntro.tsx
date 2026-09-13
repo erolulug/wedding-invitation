@@ -22,16 +22,22 @@ function BotanicalSprig({ className }: { className: string }) {
 }
 
 export function EnvelopeIntro({ monogram, date, prompt, onOpened }: EnvelopeIntroProps) {
-  const [phase, setPhase] = useState<"closed" | "opening" | "revealed" | "gone">("closed");
+  const [phase, setPhase] = useState<"closed" | "unsealing" | "flap-open" | "card-out" | "revealed" | "gone">("closed");
 
   useEffect(() => {
-    if (phase !== "opening") return;
-    const reveal = window.setTimeout(() => setPhase("revealed"), 1050);
-    const finish = window.setTimeout(() => {
-      setPhase("gone");
-      onOpened?.();
-    }, 2550);
-    return () => { window.clearTimeout(reveal); window.clearTimeout(finish); };
+    const nextPhase = {
+      unsealing: { delay: 320, next: "flap-open" },
+      "flap-open": { delay: 820, next: "card-out" },
+      "card-out": { delay: 930, next: "revealed" },
+      revealed: { delay: 800, next: "gone" },
+    } as const;
+    if (!(phase in nextPhase)) return;
+    const step = nextPhase[phase as keyof typeof nextPhase];
+    const timer = window.setTimeout(() => {
+      setPhase(step.next);
+      if (step.next === "gone") onOpened?.();
+    }, step.delay);
+    return () => window.clearTimeout(timer);
   }, [phase, onOpened]);
 
   if (phase === "gone") return null;
@@ -62,7 +68,7 @@ export function EnvelopeIntro({ monogram, date, prompt, onOpened }: EnvelopeIntr
             className="wax-seal"
             aria-label={prompt}
             disabled={phase !== "closed"}
-            onClick={() => setPhase("opening")}
+            onClick={() => setPhase("unsealing")}
           >
             <span>{monogram}</span>
           </Button>
