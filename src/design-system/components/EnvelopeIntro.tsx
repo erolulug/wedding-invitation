@@ -25,6 +25,18 @@ export function EnvelopeIntro({ monogram, date, prompt, onOpened }: EnvelopeIntr
   const [phase, setPhase] = useState<"closed" | "unsealing" | "flap-open" | "card-out" | "revealed" | "gone">("closed");
 
   useEffect(() => {
+    if (phase === "gone") return;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+    };
+  }, [phase]);
+
+  useEffect(() => {
     const nextPhase = {
       unsealing: { delay: 320, next: "flap-open" },
       "flap-open": { delay: 820, next: "card-out" },
